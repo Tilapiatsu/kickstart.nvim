@@ -881,16 +881,31 @@ require('lazy').setup({
     -- change the command in the config to whatever the name of that colorscheme is.
     --
     -- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`.
-    'catppuccin/nvim',
+    'marko-cerovac/material.nvim',
     priority = 1000, -- Make sure to load this before all the other start plugins.
     config = function()
       ---@diagnostic disable-next-line: missing-fields
-      require('catppuccin').load()
+
+      local colors = require 'material.colors'
+
+      require('material').setup {
+        styles = {
+          comments = {
+            italic = true,
+          }, -- Disable italics in comments
+        },
+
+        custom_colors = function(colors)
+          colors.editor.bg = '#1e2029'
+          colors.main.purple = '#1e2029'
+          colors.lsp.error = '#1e2029'
+        end,
+      }
 
       -- Load the colorscheme here.
       -- Like many other themes, this one has different styles, and you could load
       -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
-      vim.cmd.colorscheme 'catppuccin-mocha'
+      vim.cmd.colorscheme 'material-deep-ocean'
     end,
   },
 
