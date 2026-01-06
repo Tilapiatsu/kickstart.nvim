@@ -898,6 +898,7 @@ require('lazy').setup({
         custom_colors = function(colors)
           colors.editor.bg = '#191a1e'
           colors.main.purple = '#191a1e'
+          colors.editor.cursor = '#225566'
           --colors.lsp.error = '#1e2029'
         end,
       }
