@@ -91,7 +91,7 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
 -- Set to true if you have a Nerd Font installed and selected in the terminal
-vim.g.have_nerd_font = false
+vim.g.have_nerd_font = true
 
 -- [[ Setting options ]]
 -- See `:help vim.o`
@@ -899,8 +899,8 @@ require('lazy').setup({
           colors.editor.bg = '#191a1e'
           colors.main.purple = '#191a1e'
           colors.editor.cursor = '#225566'
+          --colors.lsp.error = '#852029'
           --colors.editor.selection = '#222244'
-          --colors.lsp.error = '#1e2029'
         end,
       }
 
